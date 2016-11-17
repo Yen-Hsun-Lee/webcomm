@@ -15,7 +15,11 @@
  *
  * @author: Christoph Schäbel
  */
-
+//          傳遞書入標籤
+            function test1(i){
+            	showid=i;
+            	 alert(showid);
+            };
 var websocketclient = {
     'client': null,
     'lastMessageId': 1,
@@ -266,13 +270,11 @@ var websocketclient = {
                 '       </div>' +
                 '   </div>' +
                 '</div>';
-//           var showid;
-//            function test1(i){
-//            	showid=i;
-//            	 alert(showid);
-//            };
-//           
-            $(showid).append(html);
+
+            	 $(showid).append(html);
+          
+           
+            
             return largest;
         },
 

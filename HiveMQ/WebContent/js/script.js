@@ -14,11 +14,16 @@ $(document).ready(
 
 			$('.close').click(function() {
 				$('.msg_box').hide();
+				
+	
+					
 				count--;
 			});
 
-			
-			
+	        $('.chat_body').hide();
+	        
+	        $('#msg_box1').hide();
+	        $('#msg_box2').hide();
 			
 			$('#aaa').click(
 					function() {
@@ -29,9 +34,9 @@ $(document).ready(
 //								$('#chat_box').append("<div class='msg_box' style='right:floatpx px'><div class='msg_head'>000<div class='close'>x</div></div><div class='msg_wrap'><div class='msg_body'><div id='messEdit'></div><div class='msg_push'></div></div><div class='msg_footer'><textarea class='msg_input' id='publishPayload' rows='4'></textarea></div></div></div>");			
 		      
 
-						$('.msg_wrap').show();
-						$('.msg_box').show();
-
+//						$('.msg_wrap').show();
+//						$('.msg_box').show();
+				         $('#msg_box1').show();
 						websocketclient.subscribe($('#subscribeTopic')
 								.val(), parseInt($('#QoSInput').val()), $(
 								'#colorChooser').val().substring(1))
@@ -54,9 +59,9 @@ $(document).ready(
 //								$('#chat_box').append("<div class='msg_box' style='right:550px'><div class='msg_head'>000<div class='close'>x</div></div><div class='msg_wrap'><div class='msg_body'><div id='messEdit'></div><div class='msg_push'></div></div><div class='msg_footer'><textarea class='msg_input' id='publishPayload' rows='4'></textarea></div></div></div>");			
 
 
-						$('.msg_wrap').show();
-						$('.msg_box').show();
-
+//						$('.msg_wrap').show();
+//						$('.msg_box').show();
+						  $('#msg_box2').show();
 						websocketclient.subscribe($('#subscribeTopic2')
 								.val(), parseInt($('#QoSInput').val()), $(
 								'#colorChooser').val().substring(1))
@@ -122,7 +127,6 @@ $(document).ready(
 						}
 					});
 	
-			document.write('<script src="js/app.js"></script>');	
 			
 		});
 

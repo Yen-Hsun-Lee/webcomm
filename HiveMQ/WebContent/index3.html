@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/togglestyle.css">
-<!--     <link rel="stylesheet" href="css/jquery.minicolors.css"> -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
-
 <link href="css/chatboxstyle.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="js/script.js"></script>
+  
 </head>
 
 <body class="notconnected">
@@ -57,9 +55,6 @@
 
 </div>
 
----------------------------------------------------------------------------------------
-
-
 
 
 <div class="chat_box" id="chat_box">
@@ -69,13 +64,14 @@
 	</div>
 	<div class="chat_body"> 
 	<div class="user" id="aaa">王小明</div>
+	
     <div class="user" id="bbb">群聊</div>
 
 </div>
 </div>
 
 
-<div class="msg_box" style="right:290px">
+<div class="msg_box" style="right:290px" id="msg_box1">
 
 	<div class="msg_head">王小明
 	<div class="close">x</div>
@@ -90,8 +86,8 @@
 </div>
 </div>
 
-<div class="msg_box" style="right:550px">
 
+<div class="msg_box" style="right:550px" id="msg_box2">
 	<div class="msg_head">群聊
 	<div class="close">x</div>
 	</div>
@@ -120,7 +116,9 @@
 <script src="js/jquery.minicolors.min.js"></script>
 <script src="js/mqttws31.js"></script>
 <script src="js/encoder.js"></script>
+
 <script src="js/app.js"></script>
+ <script src="js/script.js"></script>
 <script src="config.js"></script>
 
 <script>
@@ -149,8 +147,7 @@
             }
         });
         
-        $('.chat_body').hide();
-        $('.msg_box').hide();
+
         
         websocketclient.connect()
         
