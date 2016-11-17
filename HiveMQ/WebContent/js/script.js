@@ -1,6 +1,8 @@
 $(document).ready(
 		function() {
 
+			//計算msg_box數量
+			var count=0;
 			$('.chat_head').click(function() {
 				$('.chat_body').slideToggle('slow');
 			});
@@ -10,6 +12,7 @@ $(document).ready(
 
 			$('.close').click(function() {
 				$('.msg_box').hide();
+				count--;
 			});
 
 			
@@ -18,11 +21,11 @@ $(document).ready(
 			$('#aaa').click(
 					function() {
 						$('#colorChooser').minicolors();
-
-				     
-				                var rndColor = websocketclient.getRandomColor();
+				         var rndColor = websocketclient.getRandomColor();
+				         var floatpx = count*290
 				                $("#colorChooser").minicolors('value', rndColor);
-				      
+//								$('#chat_box').append("<div class='msg_box' style='right:floatpx px'><div class='msg_head'>000<div class='close'>x</div></div><div class='msg_wrap'><div class='msg_body'><div id='messEdit'></div><div class='msg_push'></div></div><div class='msg_footer'><textarea class='msg_input' id='publishPayload' rows='4'></textarea></div></div></div>");			
+		      
 
 						$('.msg_wrap').show();
 						$('.msg_box').show();
@@ -32,6 +35,9 @@ $(document).ready(
 								'#colorChooser').val().substring(1))
 				       flag=true;
 
+						count++;
+						console.log(count);
+						console.log("Host=" + host + ", port=" + port);
 					});
 			
 			
@@ -42,7 +48,8 @@ $(document).ready(
 				     
 				                var rndColor = websocketclient.getRandomColor();
 				                $("#colorChooser").minicolors('value', rndColor);
-				      
+//								$('#chat_box').append("<div class='msg_box' style='right:550px'><div class='msg_head'>000<div class='close'>x</div></div><div class='msg_wrap'><div class='msg_body'><div id='messEdit'></div><div class='msg_push'></div></div><div class='msg_footer'><textarea class='msg_input' id='publishPayload' rows='4'></textarea></div></div></div>");			
+
 
 						$('.msg_wrap').show();
 						$('.msg_box').show();
@@ -52,8 +59,7 @@ $(document).ready(
 								'#colorChooser').val().substring(1))
 						
 						 flag =false;
-					
-						
+					count++;						
 					});
 			
 			
