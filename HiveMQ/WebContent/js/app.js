@@ -249,6 +249,7 @@ var websocketclient = {
             });
 
         },
+       
         'message': function (message) {
 
             var largest = websocketclient.lastMessageId++;
@@ -265,7 +266,13 @@ var websocketclient = {
                 '       </div>' +
                 '   </div>' +
                 '</div>';
-            $("#messEdit").append(html);
+//           var showid;
+//            function test1(i){
+//            	showid=i;
+//            	 alert(showid);
+//            };
+//           
+            $(showid).append(html);
             return largest;
         },
 

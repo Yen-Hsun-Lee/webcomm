@@ -3,6 +3,8 @@ $(document).ready(
 
 			//計算msg_box數量
 			var count=0;
+			var flag;
+			var showid;
 			$('.chat_head').click(function() {
 				$('.chat_body').slideToggle('slow');
 			});
@@ -17,7 +19,7 @@ $(document).ready(
 
 			
 			
-			var flag;
+			
 			$('#aaa').click(
 					function() {
 						$('#colorChooser').minicolors();
@@ -37,7 +39,8 @@ $(document).ready(
 
 						count++;
 						console.log(count);
-						console.log("Host=" + host + ", port=" + port);
+						showid="#messEdit1";
+						 test1(showid);
 					});
 			
 			
@@ -59,7 +62,10 @@ $(document).ready(
 								'#colorChooser').val().substring(1))
 						
 						 flag =false;
-					count++;						
+					count++;		
+					showid="#messEdit2";
+					
+					test1(showid);
 					});
 			
 			
@@ -95,19 +101,19 @@ $(document).ready(
 //		   				var input_text = document.getElementById("publishPayload");
 //		                   input_text.value = '';
 //		                    $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
-console.log(flag);
+            console.log(flag);
 		                    
 		     if(flag){
 		    	 console.log("0000000000000000");
-                   websocketclient.publish($('#publishTopic').val(),$('#publishPayload').val(),parseInt($('#publishQoSInput').val(),10),$('#publishRetain').is(':checked'));
-   				var input_text = document.getElementById("publishPayload");
+                   websocketclient.publish($('#publishTopic').val(),$('#publishPayload1').val(),parseInt($('#publishQoSInput').val(),10),$('#publishRetain').is(':checked'));
+   				var input_text = document.getElementById("publishPayload1");
                    input_text.value = '';
                     $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
 						
 			}else{
 				console.log("1111111111111111");
-				 websocketclient.publish($('#publishTopicAll').val(),$('#publishPayload').val(),parseInt($('#publishQoSInput').val(),10),$('#publishRetain').is(':checked'));
-		          var input_text = document.getElementById("publishPayload");
+				 websocketclient.publish($('#publishTopicAll').val(),$('#publishPayload2').val(),parseInt($('#publishQoSInput').val(),10),$('#publishRetain').is(':checked'));
+		          var input_text = document.getElementById("publishPayload2");
                  input_text.value = '';
                   $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
 			};		
@@ -116,6 +122,7 @@ console.log(flag);
 						}
 					});
 	
-				
+			document.write('<script src="js/app.js"></script>');	
 			
 		});
+
